@@ -1,12 +1,23 @@
 import React from 'react'
+import { AuthContext } from "./providers/auth";
+import Profile from "./components/profile"; 
 
 function Home() {
+  const {user, setUser} = React.useContext(AuthContext);
     return (
       <div class="cardee">
-        <h1>Página Inicial</h1>
-            <div class="card" >
+        
+        <h5>Context API - Iniciante</h5>
+        <div class="spinner-border" role="status">
+          <h6>1,5</h6>
+          <span class="visually-hidden">Loading...</span>
+        </div>
+            <div class="card cardzao" >
                 <div class="card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>o que o usuário digitar será exibido sincronamente. (limite de 300 caracteres)</p>
+                  <p>obs: ainda nao sei como guardar o valor do input.</p>
+                <input type="text" maxLength={300} onChange={(e)=>setUser({name: e.target.value})}/>
+                <Profile />
                 </div>
             </div>
         

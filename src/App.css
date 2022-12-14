@@ -2,6 +2,12 @@
   text-align: center;
   
 }
+a{
+  margin-right: 5px;
+}
+.cardzao{
+  margin-top: 20px;
+}
 .paginacao{
   margin-top: 25px;
 }
